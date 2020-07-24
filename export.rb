@@ -10,19 +10,18 @@ response = HTTParty.get("https://faria.openapply.com/api/v3/students?access_toke
 JSON.parse response, symbolize_names: true
 obj = JSON.parse response
 # puts obj.class
-i = obj["students"]
+stud = obj["students"]
 
-
-
-
-
-    column = i.first.keys     # 散列的第一个列
+column_name = stud.first.keys     # 散列的第一个列
 s=CSV.generate do |csv| 
-  csv << column
-  i.each do |x|    
-    csv << x.values
+  csv << column_name
+  stud.each do |info|    
+    csv << info.values
   end
 end
-File.write('test04.csv', s)
+File.write('test05.csv', s)
+
+### 定义
+### 路径
 
 
