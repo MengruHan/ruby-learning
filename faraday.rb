@@ -16,44 +16,26 @@ info = JSON.parse (response.body)   #所有的信息
 # puts info.class
 stud = info["students"] 
 # puts stud    # 学生的信息
-#f=File.new(File.join("/Users/ruhan/files","Test.csv"), "w+") #创建一个新的csv文件(w+	读写模式。如果文件存在，则重写已存在的文件。如果文件不存在，则创建一个新文件用于读写。)
-file = File.open(File.join("/Users/ruhan/files","students.csv"),"w+")   #file.join 返回一个字符串，由指定的项连接在一起
+# f=File.new(File.join("/Users/ruhan/files","Test.csv"), "w+") #创建一个新的csv文件(w+	读写模式。如果文件存在，则重写已存在的文件。如果文件不存在，则创建一个新文件用于读写。)
+# file = File.open(File.join("/Users/ruhan/files","students.csv"),"w+")   #file.join 返回一个字符串，由指定的项连接在一起
 # file.new 方法创建一个 File 对象用于读取、写入或者读写，读写权限取决于 mode 参数
 # File.open 方法创建一个新的 file 对象，并把该 file 对象赋值给文件。
 column_name = stud.first.keys     # 散列的第一个列
-s = CSV.generate do |csv|           
-  csv << column_name
-  stud.each do |x|            #遍历values值
-    csv << x.values
-  end
-end
+# s = CSV.generate do |csv| 
+      
+#  csv << column_name
+#  stud.each do |x|            #遍历values值
+#    csv << x.values
+#  end
+# end
 #f.colse
           
-File.write(file , s)        #把s写入到file（文件）里面
-file.close  #File.close 方法来关闭该文件
+# File.write(file , s)        #把s写入到file（文件）里面
+# file.close  #File.close 方法来关闭该文件
 
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-####/Users/ruhan
-
-
-
-
-
+CSV.open("/Users/ruhan/files/file.csv", "wb") do |csv|
+  csv << column_name
+  stud.each do |x|            #遍历values值
+  csv << x.values
+  end
+end    
