@@ -9,7 +9,7 @@ describe Person do
     
     it "returns the correct full_name" do
         # @person = Person.new("1", "mengru", "han", "ru.han@oa.com", "Female")
-        expect(@person.full_name).to eql "mengruhan"
+        expect(@person.full_name).to eql "mengru han"
         # @person.full_name.should eql "mengru han"
     end
 
