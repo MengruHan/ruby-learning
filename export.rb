@@ -15,11 +15,12 @@ stud = obj["students"]
 column_name = stud.first.keys     # 散列的第一个列
 s=CSV.generate do |csv| 
   csv << column_name
-  stud.each do |info|    
-    csv << info.values
+  stud.each do |x|    
+    csv << x.values
   end
 end
-File.write('test05.csv', s)
+
+#File.write('files:/test05.csv', s)
 
 ### 定义
 ### 路径
