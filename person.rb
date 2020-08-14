@@ -30,7 +30,7 @@ class Person #类的定义   这个就是定义一个对象的实例变量name�
     end
 
     def full_name   #声明变量
-        @first_name + @last_name #调用方法
+        @first_name + " " + @last_name #调用方法
     end
    
 end
